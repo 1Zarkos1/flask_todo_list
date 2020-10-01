@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>TODO list</title>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('show_tasks') }}">
+            <div class="logo"></div>
+        </a>
+        <div class="header-title">Simple ToDo list!</div>
+    </header>
+    <form action="" method="post" name='add_task' class="form" id='main-form'>
+        <legend>Create new task</legend>
+        {{ form.csrf_token }}
+        {{ form.title.label(for='title-form') }}{{ form.title(id='title-form', class_='input-field') }}
+        {{ form.date_due.label(for='date-form') }}{{ form.date_due(id='date-form', class_='input-field', placeholder='Time format YY-MM-DDTHH:mm') }}
+        {% if form.date_due.errors %}
+        <span class="error">{{ form.date_due.errors[0] }}</span>
+        {% endif %}
+        {{ form.description.label(for='description-form') }}{{ form.description(id='description-form', class_='input-field', placeholder='Type your plans here...') }}
+        {{ form.hidden() }}
+        <button type="submit">Submit</button>
+    </form>
+    <div class="todo-list-header" id="list-title">See all tasks below!</div>
+    <input type="checkbox" name="done" id="done" onclick="getTasks(this, {{ url_for('get_tasks') }})">
+    <label for="done">Current only</label>
+    <main id="main-todos">
+        {% include '_todos.html' %}
+    </main>
+</body>
+
+</html>

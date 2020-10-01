@@ -1,0 +1,38 @@
+<section class="todo-list" id="todo-list">
+    {% for r in result %}
+    <article
+        class='todo-item {% if now > r.date_due and r.date_completed == None %}failed{% elif r.date_completed %}completed{% endif %}'
+        id="task-{{ r.id }}">
+        <div class="field item-header">
+            <div class="header-head">
+                <span class="item-number">Task №{{ r.id }}</span>
+                <span class="item-title" id="title">{{ r.title }}</span>
+            </div>
+            <div class="header-buttons">
+                {% if r.date_completed == None and now < r.date_due %}
+                <a href="{{ url_for('complete_task', id=r.id) }}" class="button accept" onclick='completeTask(this, {{ url_for("get_tasks") }})'>
+                </a>
+                <a href="" class="button edit" onclick="editTask(this.id.split('-')[1])" id="edit-{{ r.id }}">
+                </a>
+                {% endif %}
+                <a href="{{ url_for('delete_task', id=r.id) }}" class="button delete" onclick='deleteTask(this, {{ url_for("get_tasks") }})'>
+                </a>
+            </div>
+        </div>
+        <div class="field time">
+            <div class="initial-dates">
+                <span class="creation date">Created at {{ r.date_created|time }}</span> |
+                <span class="due date" id="due-{{ r.id }}"
+                    onmouseover="assignRemainingTime(this, '{{ r.date_due|time }}'); this.onmouseover = null;">Due at {{ r.date_due|time }}</span>
+            </div>
+            {% if r.date_completed != None %}
+            <div class="completion-dates">
+                <span class="completed_on date">Completed at {{ r.date_completed|time }}</span>
+                <span class="duration date">in {{ (r.date_completed-r.date_created)|interval }}</span>
+            </div>
+            {% endif %}
+        </div>
+        <div class="field desc" id="description">{{ r.description }}</div>
+    </article>
+    {% endfor %}
+</section>
