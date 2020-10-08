@@ -1,0 +1,29 @@
+{% from 'macros.html' import field_errors %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="auth-header">
+        <h2>Register in ToDo app</h2>
+        <a href="{{ url_for('show_tasks') }}">Back to app</a>
+    </div>
+    <form action="" method="post" class="form" name='add_task' id='main-form'>
+        {% if 'csrf_token' in form %}{{ form.csrf_token }}{% endif %}
+        {{ form.email.label() }}
+        {{ form.email(class_='input-field') }}
+        {{ field_errors(form.email) }}
+        {{ form.password.label() }}
+        {{ form.password(class_='input-field') }}
+        {{ field_errors(form.password) }}
+        {{ form.pass_repeat.label() }}
+        {{ form.pass_repeat(class_='input-field') }}
+        {{ field_errors(form.pass_repeat) }}
+        {{ form.submit(id='task-button') }}
+    </form>
+</body>
+</html>

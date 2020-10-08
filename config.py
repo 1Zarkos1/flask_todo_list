@@ -1,5 +1,5 @@
 class DevConfig:
-    SECRET_KEY = "anotherkey"
+    SECRET_KEY = "sladjfaoi4j30348ru"
     TESTING = False
     SQLALCHEMY_DATABASE_URI = "sqlite:///tasks.db"
     DEBUG = True
@@ -8,5 +8,6 @@ class DevConfig:
 
 class TestConfig:
     SECRET_KEY = "somekey"
+    WTF_CSRF_ENABLED = False
     TESTING = True
     SQLALCHEMY_DATABASE_URI = "sqlite:///test.db"

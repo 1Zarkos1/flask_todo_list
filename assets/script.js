@@ -18,7 +18,7 @@ function editTask(ref) {
   form.querySelector("#title-form").value = title;
   form.querySelector("#date-form").setAttribute("value", date);
   form.querySelector("#description-form").value = description;
-  form.querySelector("#hidden").value = ref;
+  form.querySelector("#hidden_id").value = ref;
 }
 
 function assignRemainingTime(elem, dueTime) {

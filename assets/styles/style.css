@@ -1,164 +1,185 @@
 body {
-    max-width: 500px;
-    min-width: 360px;
-    font-family: Arial, Helvetica, sans-serif;
+  max-width: 500px;
+  min-width: 360px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    display: flex;
-    border-bottom: 1px solid black;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
+.logo-header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-form {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .logo {
-    background-image: url("../imgs/check.png");
-    height: 3rem;
-    width: 3rem;
-    background-repeat: no-repeat;
-    background-size: contain;
+  background-image: url("../imgs/check.png");
+  height: 3rem;
+  width: 3rem;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .header-title {
-    font-weight: 600;
-    font-size: 2.2rem;
-    font-style: italic;
-    vertical-align: text-bottom;
-    margin-left: 1rem;
+  font-weight: 600;
+  font-size: 2.2rem;
+  font-style: italic;
+  vertical-align: text-bottom;
+  margin-left: 1rem;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-field {
-    box-sizing: border-box;
-    height: 2.0rem;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 1.1rem;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  height: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input-field:focus {
-    border: 2px solid rgb(86, 219, 219);
+  border: 2px solid rgb(86, 219, 219);
 }
 
 textarea.input-field {
-    height: 6rem;
+  height: 6rem;
 }
 
-legend, .todo-list-header {
-    align-self: center;
-    font-size: 1.4rem;
+legend,
+.todo-list-header {
+  align-self: center;
+  font-size: 1.4rem;
 }
 
 label {
-    font-size: 1.1rem;
-    margin-left: 0.5rem;
-    margin-top: 0.6rem;
-    margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.2rem;
 }
 
-button {
-    font-size: 1.05rem;
-    height: 1.8rem;
-    margin-top: 0.6rem;
-    border-radius: 0.5rem;
+#task-button {
+  font-size: 1.05rem;
+  height: 1.8rem;
+  margin-top: 0.6rem;
+  border-radius: 0.5rem;
 }
 
 .todo-list-header {
-    text-align: center;
-    margin: 1rem 0 0.5rem 0;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .todo-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-item {
-    margin: 0.2rem 0;
+  margin: 0.2rem 0;
 }
 
 .todo-item {
-    box-sizing: border-box;
-    background-color: rgb(240, 240, 240);
-    border-radius: 1rem;
-    overflow: hidden;
+  box-sizing: border-box;
+  background-color: rgb(240, 240, 240);
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .item-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: lightsteelblue;
-    padding: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: lightsteelblue;
+  padding: 0.3rem;
 }
 
 .header-head {
-    flex-grow: 2;
+  flex-grow: 2;
 }
 
 .header-buttons {
-    display: flex;
+  display: flex;
 }
 
 .item-number {
-    font-size: 0.9rem;
-    font-style: italic;
-    margin-right: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-right: 1rem;
 }
 
 .item-title {
-    font-weight: 600;
-    flex-grow: 1;
+  font-weight: 600;
+  flex-grow: 1;
 }
 
 .button {
-    /* display: block; */
-    height: 1rem;
-    width: 1rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0 0.2rem;
+  /* display: block; */
+  height: 1rem;
+  width: 1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 0.2rem;
 }
 
 .accept {
-    background-image: url("../imgs/accept.png");
+  background-image: url("../imgs/accept.png");
 }
 
 .edit {
-    background-image: url("../imgs/edit.png");
+  background-image: url("../imgs/edit.png");
 }
 
 .delete {
-    background-image: url("../imgs/delete.png");
+  background-image: url("../imgs/delete.png");
 }
 
 .field {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }
 
 .date {
-    font-style: italic;
-    font-size: 0.9rem;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .desc {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .failed {
-    background-color: rgba(255, 67, 67, 0.4);
+  background-color: rgba(255, 67, 67, 0.4);
 }
 
 .completed {
-    background-color: rgba(40, 255, 75, 0.4);
+  background-color: rgba(40, 255, 75, 0.4);
 }
 
-.error {
-    color: red;
-    font-size: 0.9rem;
-    font-style: italic;
+.field-error {
+  color: red;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-header {
+  justify-content: flex-end;
+}
+
+.auth-header-item:nth-of-type(1) {
+  margin-right: 0.7rem;
 }
